@@ -1,0 +1,23 @@
+.table-item--name {
+  width: 15%;
+}
+
+.table-item--email {
+  width: 25%;
+}
+
+.table-item--phone {
+  width: 20%;
+}
+
+.table-item--gender {
+  width: 5%;
+}
+
+.table-item--nickname {
+  width: 20%;
+}
+
+.table-item--joined-date {
+  width: 15%;
+}

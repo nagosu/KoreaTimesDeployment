@@ -1,0 +1,140 @@
+.table-item--name {
+  width: 20%;
+}
+
+.table-item--email {
+  width: 30%;
+}
+
+.table-item--topic {
+  width: 20%;
+}
+
+.table-item--chat-date {
+  width: 15%;
+}
+
+.table-item--chat-log-button {
+  width: 15%;
+}
+
+.table-item--chat-log-button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: var(--primary-button-color);
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.table-item--chat-log-button button:hover {
+  background-color: var(--primary-button-hover-color);
+}
+
+.modal-chat-log-overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.modal-chat-log-overlay.fade-out {
+  animation: fadeOut 0.3s forwards;
+}
+
+.modal-chat-log-overlay .modal-chat-log-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #fefefe;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 90%;
+  height: 90%;
+  padding: 30px 120px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s;
+  overflow-y: auto;
+}
+
+.modal-chat-log-overlay .modal-chat-log-content .modal-chat-log-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  cursor: pointer;
+}
+
+.modal-chat-log-content .logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  min-height: 60px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #ededed;
+  border-radius: 12px;
+}
+
+.modal-chat-log-content .modal-chat-log-title {
+  margin-top: 30px;
+  font-size: 2.2rem;
+}
+
+.modal-chat-log-content .chat-log-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 40px;
+  gap: 50px;
+}
+
+.chat-log-container .chat-log-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.chat-log-item .chat-log-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 20%;
+}
+
+.chat-log-item .chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 70%;
+  gap: 20px;
+}
+
+.chat-wrapper .chat {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: start;
+}
+
+.chat-wrapper img {
+  width: 500px;
+}

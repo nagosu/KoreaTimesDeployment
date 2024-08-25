@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../static/css/reset.css" />
+    <link rel="stylesheet" href="../../static/css/common.css" />
+    <link
+      rel="stylesheet"
+      href="../../static/css/production_management/production_management.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 상단 네비게이션 바 (GNB) -->
+      <div class="navbar">
+        <div class="profile-container">
+          <div class="profile">
+            <img
+              src="../../static/images/icon/svg/User_circle_duotone.svg"
+              alt="프로필"
+              class="profile-image"
+              draggable="false"
+            />
+            <span class="profile-name">Master</span>
+          </div>
+          <div class="divider"></div>
+          <button
+            type="button"
+            class="navbar-logout-button"
+            onclick="openModalLogoutConfirm()"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+      <!-- //상단 네비게이션 바 (GNB) -->
+
+      <!-- 컨텐츠 -->
+      <div class="content">
+        <!-- 왼쪽 사이드 바 (SNB) -->
+        <div class="sidebar">
+          <div class="sidebar-header">
+            <h2 class="sidebar-header-title">Menu</h2>
+          </div>
+          <div class="sidebar-content">
+            <div class="sidebar-menu-container">
+              <div class="sidebar-menu-title">
+                <h3>회원 관리</h3>
+              </div>
+              <ul class="sidebar-menu-list menu-generate">
+                <a
+                  href="../user_management/user_profile_table.html"
+                  class="sidebar-menu-item"
+                  >회원 정보</a
+                >
+                <a
+                  href="../user_management/user_chat_logs.html"
+                  class="sidebar-menu-item"
+                  >회원 대화 로그</a
+                >
+              </ul>
+            </div>
+            <div class="sidebar-menu-container">
+              <div class="sidebar-menu-title active">
+                <h3>제작 관리 시스템</h3>
+              </div>
+              <ul class="sidebar-menu-list menu-generate">
+                <a
+                  href="../production_management_system/production_summary.html"
+                  class="sidebar-menu-item"
+                  >요약</a
+                >
+                <a
+                  href="../production_management_system/production_blog_script.html"
+                  class="sidebar-menu-item"
+                  >블로그 스크립트</a
+                >
+                <a
+                  href="../production_management_system/production_cardnews_script.html"
+                  class="sidebar-menu-item"
+                  >카드뉴스 스크립트</a
+                >
+                <a
+                  href="../production_management_system/production_video_script.html"
+                  class="sidebar-menu-item"
+                  >영상 스크립트</a
+                >
+                <a
+                  href="../production_management_system/production_shorts_script.html"
+                  class="sidebar-menu-item active"
+                  >쇼츠 스크립트</a
+                >
+              </ul>
+            </div>
+            <div class="sidebar-menu-container">
+              <div class="sidebar-menu-title">
+                <h3>허브 연동</h3>
+              </div>
+              <ul class="sidebar-menu-list menu-generate">
+                <a href="" class="sidebar-menu-item">기사 다듬기</a>
+              </ul>
+            </div>
+            <div class="sidebar-menu-container">
+              <div class="sidebar-menu-title">
+                <h3>콘텐츠 결과물 조회</h3>
+              </div>
+              <ul class="sidebar-menu-list menu-generate">
+                <a
+                  href="../content_results_view/content_results_view.html"
+                  class="sidebar-menu-item"
+                  >콘텐츠 결과물 조회</a
+                >
+              </ul>
+            </div>
+            <div class="sidebar-menu-container">
+              <div class="sidebar-menu-title">
+                <h3>결제 정보 관리</h3>
+              </div>
+              <ul class="sidebar-menu-list menu-generate">
+                <a
+                  href="../payment_info_management/payment_info_management.html"
+                  class="sidebar-menu-item"
+                  >결제 정보 관리</a
+                >
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- //왼쪽 사이드 바 (SNB) -->
+
+        <!-- 메인 컨텐츠 -->
+        <div class="main-content">
+          <!-- 타이틀 -->
+          <div class="main-content-header">
+            <h2 class="main-content-header-title">제작 관리 시스템</h2>
+          </div>
+          <!-- //타이틀 -->
+
+          <!-- GPT 버전 -->
+          <div class="gpt-version-container">
+            <div class="title-wrapper">
+              <div class="title-dot"></div>
+              <h3>GPT 버전</h3>
+            </div>
+            <div class="dropdown">
+              <div class="selected">
+                GPT Version
+                <img
+                  src="../../static/images/icon/svg/Arrow_drop_down.svg"
+                  alt="드롭다운 화살표"
+                  class="triangle"
+                />
+              </div>
+              <div class="dropdown-menu">
+                <div>Gpt-3.5-turbo</div>
+                <div>Gpt-4</div>
+                <div>Gpt-4-32k</div>
+                <div>Gpt-4o</div>
+              </div>
+            </div>
+          </div>
+          <!-- //GPT 버전 -->
+
+          <!-- [학습 데이터] 텍스트 입력 / 파일 입력 선택 -->
+          <div class="content-container">
+            <div class="title-wrapper">
+              <div class="title-dot"></div>
+              <h3>[학습 데이터] 텍스트 입력 / 파일 입력 선택</h3>
+            </div>
+
+            <!-- 정렬 순서 필터 -->
+            <fieldset class="input-mode-container">
+              <label>
+                <input type="radio" name="contact" value="email" checked />
+                <span>직접 텍스트 입력</span>
+              </label>
+              <label>
+                <input type="radio" name="contact" value="phone" />
+                <span>파일 입력</span>
+              </label>
+            </fieldset>
+            <!-- //정렬 순서 필터 -->
+          </div>
+          <!-- //[학습 데이터] 텍스트 입력 / 파일 입력 선택 -->
+
+          <!-- 학습 데이터 텍스트 입력 -->
+          <div class="content-container">
+            <div class="title-wrapper">
+              <div class="title-dot"></div>
+              <h3>학습 데이터 텍스트 입력</h3>
+            </div>
+            <textarea
+              class="learning-data-textarea"
+              placeholder="학습에 필요한 데이터를 입력하세요."
+            ></textarea>
+          </div>
+          <!-- //학습 데이터 텍스트 입력 -->
+
+          <!-- 학습 데이터 파일 입력 -->
+          <div class="content-container">
+            <div class="title-wrapper">
+              <div class="title-dot"></div>
+              <h3>학습 데이터 파일 입력 (데이터 1)</h3>
+            </div>
+            <div class="file-input-container">
+              <span class=""
+                >학습 데이터 파일을 업로드해주세요.(pdf, pptx, docx, txt
+                등)</span
+              >
+              <button
+                class="file-input-button"
+                onclick="document.getElementById('fileInput').click()"
+              >
+                파일 선택
+              </button>
+              <input type="file" id="fileInput" style="display: none" />
+            </div>
+            <img
+              src="../../static/images/icon/svg/Add_ring.svg"
+              alt="추가"
+              class="add-file-data-icon"
+            />
+            <div class="title-wrapper">
+              <div class="title-dot"></div>
+              <h3>학습 데이터 파일 입력 (데이터 2)</h3>
+            </div>
+            <div class="file-input-container">
+              <span class=""
+                >학습 데이터 파일을 업로드해주세요.(pdf, pptx, docx, txt
+                등)</span
+              >
+              <button
+                class="file-input-button"
+                onclick="document.getElementById('fileInput').click()"
+              >
+                파일 선택
+              </button>
+              <input type="file" id="fileInput" style="display: none" />
+            </div>
+          </div>
+          <!-- //학습 데이터 파일 입력 -->
+
+          <!-- 지침 데이터 텍스트 입력 -->
+          <div class="content-container">
+            <div class="title-wrapper">
+              <div class="title-dot"></div>
+              <h3>지침 데이터 텍스트 입력</h3>
+            </div>
+            <textarea
+              class="guideline-textarea"
+              placeholder="지침 데이터를 입력해 주세요."
+            ></textarea>
+          </div>
+          <!-- //지침 데이터 텍스트 입력 -->
+
+          <!-- 적용 버튼 -->
+          <div class="save-button-container">
+            <button>적용</button>
+          </div>
+          <!-- //적용 버튼 -->
+        </div>
+        <!-- //메인 컨텐츠 -->
+      </div>
+      <!-- //컨텐츠 -->
+    </div>
+
+    <!-- 로그아웃 모달 -->
+    <div class="modal-logout-confirm-overlay">
+      <div class="modal-logout-confirm-content">
+        <div class="modal-logout-confirm-message-container">
+          <span class="modal-logout-confirm-message"
+            >정말 로그아웃 하시겠습니까?</span
+          >
+        </div>
+        <div class="modal-logout-confirm-button-container">
+          <button
+            type="button"
+            class="modal-logout-confirm-button"
+            onclick="closeModalLogoutConfirm()"
+          >
+            예
+          </button>
+          <button
+            type="button"
+            class="modal-logout-confirm-cancel-button"
+            onclick="closeModalLogoutConfirm()"
+          >
+            아니요
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- //로그아웃 모달 -->
+
+    <!-- 스크립트 -->
+    <script src="../../static/js/logout/logout.js"></script>
+    <script src="../../static/js/dropdown/dropdown.js"></script>
+  </body>
+</html>

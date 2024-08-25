@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../static/css/reset.css" />
+    <link rel="stylesheet" href="../../static/css/common.css" />
+    <link
+      rel="stylesheet"
+      href="../../static/css/payment_info_management/payment_info_management.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 상단 네비게이션 바 (GNB) -->
+      <div class="navbar">
+        <div class="profile-container">
+          <div class="profile">
+            <img
+              src="../../static/images/icon/svg/User_circle_duotone.svg"
+              alt="프로필"
+              class="profile-image"
+              draggable="false"
+            />
+            <span class="profile-name">Master</span>
+          </div>
+          <div class="divider"></div>
+          <button
+            type="button"
+            class="navbar-logout-button"
+            onclick="openModalLogoutConfirm()"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+      <!-- //상단 네비게이션 바 (GNB) -->
+
+      <!-- 컨텐츠 -->
+      <div class="content">
+        <!-- 왼쪽 사이드 바 (SNB) -->
+        <div class="sidebar">
+          <div class="sidebar-header">
+            <h2 class="sidebar-header-title">Menu</h2>
+          </div>
+          <div class="sidebar-content">
+            <div class="sidebar-menu-container">
+              <div class="sidebar-menu-title">
+                <h3>회원 관리</h3>
+              </div>
+              <ul class="sidebar-menu-list menu-generate">
+                <a
+                  href="../user_management/user_profile_table.html"
+                  class="sidebar-menu-item"
+                  >회원 정보</a
+                >
+                <a
+                  href="../user_management/user_chat_logs.html"
+                  class="sidebar-menu-item"
+                  >회원 대화 로그</a
+                >
+              </ul>
+            </div>
+            <div class="sidebar-menu-container">
+              <div class="sidebar-menu-title">
+                <h3>제작 관리 시스템</h3>
+              </div>
+              <ul class="sidebar-menu-list menu-generate">
+                <a
+                  href="../production_management_system/production_summary.html"
+                  class="sidebar-menu-item"
+                  >요약</a
+                >
+                <a
+                  href="../production_management_system/production_blog_script.html"
+                  class="sidebar-menu-item"
+                  >블로그 스크립트</a
+                >
+                <a
+                  href="../production_management_system/production_cardnews_script.html"
+                  class="sidebar-menu-item"
+                  >카드뉴스 스크립트</a
+                >
+                <a
+                  href="../production_management_system/production_video_script.html"
+                  class="sidebar-menu-item"
+                  >영상 스크립트</a
+                >
+                <a
+                  href="../production_management_system/production_shorts_script.html"
+                  class="sidebar-menu-item"
+                  >쇼츠 스크립트</a
+                >
+              </ul>
+            </div>
+            <div class="sidebar-menu-container">
+              <div class="sidebar-menu-title">
+                <h3>허브 연동</h3>
+              </div>
+              <ul class="sidebar-menu-list menu-generate">
+                <a href="" class="sidebar-menu-item">기사 다듬기</a>
+              </ul>
+            </div>
+            <div class="sidebar-menu-container">
+              <div class="sidebar-menu-title">
+                <h3>콘텐츠 결과물 조회</h3>
+              </div>
+              <ul class="sidebar-menu-list menu-generate">
+                <a
+                  href="../content_results_view/content_results_view.html"
+                  class="sidebar-menu-item"
+                  >콘텐츠 결과물 조회</a
+                >
+              </ul>
+            </div>
+            <div class="sidebar-menu-container">
+              <div class="sidebar-menu-title active">
+                <h3>결제 정보 관리</h3>
+              </div>
+              <ul class="sidebar-menu-list menu-generate">
+                <a
+                  href="../payment_info_management/payment_info_management.html"
+                  class="sidebar-menu-item active"
+                  >결제 정보 관리</a
+                >
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- //왼쪽 사이드 바 (SNB) -->
+
+        <!-- 메인 컨텐츠 -->
+        <div class="main-content">
+          <!-- 타이틀 -->
+          <div class="main-content-header">
+            <h2 class="main-content-header-title">결제 정보 관리</h2>
+          </div>
+          <!-- //타이틀 -->
+
+          <!-- 필터 -->
+          <div class="filter-container">
+            <!-- 정렬 순서 필터 -->
+            <fieldset class="filter-mode-container">
+              <label>
+                <input type="radio" name="contact" value="email" checked />
+                <span>최신순</span>
+              </label>
+              <label>
+                <input type="radio" name="contact" value="phone" />
+                <span>이름순</span>
+              </label>
+            </fieldset>
+            <!-- //정렬 순서 필터 -->
+
+            <!-- 검색 필터 -->
+            <div class="filter-wrapper">
+              <div class="filter-dropdown-container">
+                <div class="dropdown-date-container">
+                  <span class="dropdown-title">기간</span>
+                  <div class="date-input-container">
+                    <input
+                      type="text"
+                      class="date-input"
+                      placeholder="YYYY/MM/DD"
+                    />
+                    <span class="date-range-separator">~</span>
+                    <input
+                      type="text"
+                      class="date-input"
+                      placeholder="YYYY/MM/DD"
+                    />
+                  </div>
+                </div>
+                <div class="dropdown-search-container">
+                  <span class="dropdown-title">검색</span>
+                  <div class="dropdown-wrapper">
+                    <div class="dropdown">
+                      <div class="selected">
+                        카테고리
+                        <img
+                          src="../../static/images/icon/svg/Arrow_drop_down.svg"
+                          alt="드롭다운 화살표"
+                          class="triangle"
+                        />
+                      </div>
+                      <div class="dropdown-menu">
+                        <div>이름</div>
+                        <div>상태</div>
+                        <div>결제 플랜</div>
+                      </div>
+                    </div>
+                    <div class="search-input-container">
+                      <input type="text" placeholder="Search" />
+                      <img
+                        src="../../static/images/icon/svg/Search_light.svg"
+                        alt="검색"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="search-button">조회</button>
+            </div>
+            <!-- //검색 필터 -->
+          </div>
+          <!-- //필터 -->
+
+          <!-- 결제 정보 테이블 -->
+          <table class="table">
+            <thead class="table-header">
+              <tr class="table-container">
+                <th class="table-item table-item--name">이름</th>
+                <th class="table-item table-item--status">상태</th>
+                <th class="table-item table-item--billing-plan">결제 플랜</th>
+                <th class="table-item table-item--billing-date">결제 일자</th>
+                <th class="table-item table-item--token-usage">
+                  토큰 사용량/Monthly
+                </th>
+                <th class="table-item table-item--payment-cancel-button">
+                  결제 취소
+                </th>
+              </tr>
+            </thead>
+            <tbody class="table-data">
+              <tr class="table-container">
+                <td class="table-item table-item--name">엔디고</td>
+                <td class="table-item table-item--status">결제 완료</td>
+                <td class="table-item table-item--billing-plan">Monthly</td>
+                <td class="table-item table-item--billing-date">2024.06.29</td>
+                <td class="table-item table-item--token-usage">4300 tokens</td>
+                <td class="table-item table-item--payment-cancel-button">
+                  <button type="button">결제 취소</button>
+                </td>
+              </tr>
+              <tr class="table-container">
+                <td class="table-item table-item--name">엔디고</td>
+                <td class="table-item table-item--status">결제 취소</td>
+                <td class="table-item table-item--billing-plan">
+                  Basic Monthly
+                </td>
+                <td class="table-item table-item--billing-date">2024.07.02</td>
+                <td class="table-item table-item--token-usage">8200 tokens</td>
+                <td class="table-item table-item--payment-cancel-button">
+                  <button type="button">결제 취소</button>
+                </td>
+              </tr>
+              <tr class="table-container">
+                <td class="table-item table-item--name">엔디고</td>
+                <td class="table-item table-item--status">결제 완료</td>
+                <td class="table-item table-item--billing-plan">Monthly</td>
+                <td class="table-item table-item--billing-date">2024.06.29</td>
+                <td class="table-item table-item--token-usage">4300 tokens</td>
+                <td class="table-item table-item--payment-cancel-button">
+                  <button type="button">결제 취소</button>
+                </td>
+              </tr>
+              <tr class="table-container">
+                <td class="table-item table-item--name">엔디고</td>
+                <td class="table-item table-item--status">결제 완료</td>
+                <td class="table-item table-item--billing-plan">Monthly</td>
+                <td class="table-item table-item--billing-date">2024.06.29</td>
+                <td class="table-item table-item--token-usage">4300 tokens</td>
+                <td class="table-item table-item--payment-cancel-button">
+                  <button type="button">결제 취소</button>
+                </td>
+              </tr>
+              <tr class="table-container">
+                <td class="table-item table-item--name">엔디고</td>
+                <td class="table-item table-item--status">결제 완료</td>
+                <td class="table-item table-item--billing-plan">Monthly</td>
+                <td class="table-item table-item--billing-date">2024.06.29</td>
+                <td class="table-item table-item--token-usage">4300 tokens</td>
+                <td class="table-item table-item--payment-cancel-button">
+                  <button type="button">결제 취소</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- //결제 정보 테이블 -->
+
+          <!-- 페이지네이션 -->
+          <div class="pagination">
+            <button class="pagination__button-prev">
+              <img src="../../static/images/icon/svg/Expand_left_double.svg" />
+            </button>
+            <button class="pagination__button pagination__button--active">
+              1
+            </button>
+            <button class="pagination__button">2</button>
+            <button class="pagination__button">3</button>
+            <button class="pagination__button">4</button>
+            <button class="pagination__button">5</button>
+            <button class="pagination__button-next">
+              <img src="../../static/images/icon/svg/Expand_right_double.svg" />
+            </button>
+          </div>
+          <!-- //페이지네이션 -->
+        </div>
+        <!-- //메인 컨텐츠 -->
+      </div>
+      <!-- //컨텐츠 -->
+    </div>
+
+    <!-- 로그아웃 모달 -->
+    <div class="modal-logout-confirm-overlay">
+      <div class="modal-logout-confirm-content">
+        <div class="modal-logout-confirm-message-container">
+          <span class="modal-logout-confirm-message"
+            >정말 로그아웃 하시겠습니까?</span
+          >
+        </div>
+        <div class="modal-logout-confirm-button-container">
+          <button
+            type="button"
+            class="modal-logout-confirm-button"
+            onclick="closeModalLogoutConfirm()"
+          >
+            예
+          </button>
+          <button
+            type="button"
+            class="modal-logout-confirm-cancel-button"
+            onclick="closeModalLogoutConfirm()"
+          >
+            아니요
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- //로그아웃 모달 -->
+
+    <!-- 스크립트 -->
+    <script src="../../static/js/logout/logout.js"></script>
+    <script src="../../static/js/dropdown/dropdown.js"></script>
+  </body>
+</html>

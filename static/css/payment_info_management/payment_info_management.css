@@ -1,0 +1,41 @@
+.table-item--name {
+  width: 15%;
+}
+
+.table-item--status {
+  width: 10%;
+}
+
+.table-item--billing-plan {
+  width: 20%;
+}
+
+.table-item--billing-date {
+  width: 20%;
+}
+
+.table-item--token-usage {
+  width: 20%;
+}
+
+.table-item--payment-cancel-button {
+  width: 15%;
+}
+
+.table-item--payment-cancel-button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: var(--primary-button-color);
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.table-item--payment-cancel-button button:hover {
+  background-color: var(--primary-button-hover-color);
+}
