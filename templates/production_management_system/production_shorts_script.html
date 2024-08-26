@@ -140,9 +140,9 @@
 
           <!-- GPT 버전 -->
           <div class="gpt-version-container">
-            <div class="title-wrapper">
+            <div class="title-wrapper gpt-version">
               <div class="title-dot"></div>
-              <h3>GPT 버전</h3>
+              <h3>(필수) GPT 버전</h3>
             </div>
             <div class="dropdown">
               <div class="selected">
@@ -167,17 +167,28 @@
           <div class="content-container">
             <div class="title-wrapper">
               <div class="title-dot"></div>
-              <h3>[학습 데이터] 텍스트 입력 / 파일 입력 선택</h3>
+              <h3>(필수) [학습 데이터] 텍스트 입력 / 파일 입력 선택</h3>
             </div>
 
             <!-- 정렬 순서 필터 -->
             <fieldset class="input-mode-container">
               <label>
-                <input type="radio" name="contact" value="email" checked />
+                <input
+                  type="radio"
+                  name="contact"
+                  value="email"
+                  id="textInputRadio"
+                  checked
+                />
                 <span>직접 텍스트 입력</span>
               </label>
               <label>
-                <input type="radio" name="contact" value="phone" />
+                <input
+                  type="radio"
+                  name="contact"
+                  value="phone"
+                  id="fileInputRadio"
+                />
                 <span>파일 입력</span>
               </label>
             </fieldset>
@@ -186,10 +197,10 @@
           <!-- //[학습 데이터] 텍스트 입력 / 파일 입력 선택 -->
 
           <!-- 학습 데이터 텍스트 입력 -->
-          <div class="content-container">
+          <div class="content-container" id="textInputContainer">
             <div class="title-wrapper">
               <div class="title-dot"></div>
-              <h3>학습 데이터 텍스트 입력</h3>
+              <h3>(필수) 학습 데이터 텍스트 입력</h3>
             </div>
             <textarea
               class="learning-data-textarea"
@@ -199,46 +210,37 @@
           <!-- //학습 데이터 텍스트 입력 -->
 
           <!-- 학습 데이터 파일 입력 -->
-          <div class="content-container">
-            <div class="title-wrapper">
-              <div class="title-dot"></div>
-              <h3>학습 데이터 파일 입력 (데이터 1)</h3>
+          <div
+            class="content-container"
+            id="fileInputContainer"
+            style="display: none"
+          >
+            <div class="file-input-wrapper">
+              <div class="title-wrapper">
+                <div class="title-dot"></div>
+                <h3>(필수) 학습 데이터 파일 입력 (데이터 1)</h3>
+              </div>
+              <div class="file-input-container">
+                <span id="fileName1"
+                  >학습 데이터 파일을 업로드해주세요.(pdf, pptx, docx, txt
+                  등)</span
+                >
+                <button
+                  class="file-input-button"
+                  onclick="document.getElementById('fileInput1').click()"
+                >
+                  파일 선택
+                </button>
+                <input type="file" id="fileInput1" style="display: none" />
+              </div>
             </div>
-            <div class="file-input-container">
-              <span class=""
-                >학습 데이터 파일을 업로드해주세요.(pdf, pptx, docx, txt
-                등)</span
-              >
-              <button
-                class="file-input-button"
-                onclick="document.getElementById('fileInput').click()"
-              >
-                파일 선택
-              </button>
-              <input type="file" id="fileInput" style="display: none" />
-            </div>
+
             <img
               src="../../static/images/icon/svg/Add_ring.svg"
               alt="추가"
               class="add-file-data-icon"
+              id="addFileButton"
             />
-            <div class="title-wrapper">
-              <div class="title-dot"></div>
-              <h3>학습 데이터 파일 입력 (데이터 2)</h3>
-            </div>
-            <div class="file-input-container">
-              <span class=""
-                >학습 데이터 파일을 업로드해주세요.(pdf, pptx, docx, txt
-                등)</span
-              >
-              <button
-                class="file-input-button"
-                onclick="document.getElementById('fileInput').click()"
-              >
-                파일 선택
-              </button>
-              <input type="file" id="fileInput" style="display: none" />
-            </div>
           </div>
           <!-- //학습 데이터 파일 입력 -->
 
@@ -294,8 +296,26 @@
     </div>
     <!-- //로그아웃 모달 -->
 
+    <!-- 경고 모달 -->
+    <div class="modal-confirm-overlay">
+      <div class="modal-confirm">
+        <div class="modal-message-container">
+          <span class="modal-message">필수 항목을 기입해주세요.</span>
+        </div>
+        <button
+          type="button"
+          class="modal-confirm-close-button"
+          onclick="closeModalConfirm()"
+        >
+          확인
+        </button>
+      </div>
+    </div>
+    <!-- //경고 모달 -->
+
     <!-- 스크립트 -->
     <script src="../../static/js/logout/logout.js"></script>
     <script src="../../static/js/dropdown/dropdown.js"></script>
+    <script src="../../static/js/production_management_system/production_management_system.js"></script>
   </body>
 </html>

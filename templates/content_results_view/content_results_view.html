@@ -316,12 +316,14 @@
     <!-- 콘텐츠 결과 모달 -->
     <div class="modal-results-view-overlay">
       <div class="modal-results-view-content">
-        <img
-          src="../../static/images/icon/svg/Close_round.svg"
-          alt="닫기"
-          class="modal-results-view-close-button"
-          onclick="closeResultsViewModal()"
-        />
+        <div class="close-button-container">
+          <img
+            src="../../static/images/icon/svg/Close_round.svg"
+            alt="닫기"
+            class="modal-results-view-close-button"
+            onclick="closeResultsViewModal()"
+          />
+        </div>
         <h1 class="modal-results-view-title">View Generated Results</h1>
         <h2 class="modal-results-view-subtitle">영상 스크립트</h2>
         <div class="chat-log-container">
@@ -407,5 +409,6 @@
     <script src="../../static/js/logout/logout.js"></script>
     <script src="../../static/js/dropdown/dropdown.js"></script>
     <script src="../../static/js/content_results_view/content_results_view.js"></script>
+    <script src="../../static/js/date/date.js"></script>
   </body>
 </html>

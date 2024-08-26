@@ -315,12 +315,14 @@
     <!-- 대화 로그 모달 -->
     <div class="modal-chat-log-overlay">
       <div class="modal-chat-log-content">
-        <img
-          src="../../static/images/icon/svg/Close_round.svg"
-          alt="닫기"
-          class="modal-chat-log-close-button"
-          onclick="closeChatLogModal()"
-        />
+        <div class="close-button-container">
+          <img
+            src="../../static/images/icon/svg/Close_round.svg"
+            alt="닫기"
+            class="modal-chat-log-close-button"
+            onclick="closeChatLogModal()"
+          />
+        </div>
         <div class="logo-container">logo</div>
         <h1 class="modal-chat-log-title">Chat history</h1>
         <div class="chat-log-container">
@@ -378,6 +380,8 @@
 
     <!-- 스크립트 -->
     <script src="../../static/js/logout/logout.js"></script>
+    <script src="../../static/js/dropdown/dropdown.js"></script>
     <script src="../../static/js/user_management/user_chat_logs.js"></script>
+    <script src="../../static/js/date/date.js"></script>
   </body>
 </html>

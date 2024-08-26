@@ -71,13 +71,19 @@
   overflow-y: auto;
 }
 
+.close-button-container {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
 .modal-results-view-overlay
   .modal-results-view-content
   .modal-results-view-close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
   width: 35px;
+  margin-right: -90px;
   cursor: pointer;
 }
 
